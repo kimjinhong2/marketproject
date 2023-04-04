@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+
+  datasource:
+    url: jdbc:mariadb://localhost:3307/market?serverTimezone=Asia/Seoul
+    username: root
+    password: asdf4826
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  redis:
+    host: localhost
+    port: 6379
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        format_sql : true
+        default_batch_fetch_size: 1000
+
+    show-sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+    
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: 4023ef3d8919ccb7bc7eacec80d9bc12
+            client-secret: IUgyXxsPKjaPLlPgIg9pOR5pBla7Y6EL
+            scope:
+              - profile_nickname
+              - account_email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            client-name: kakao
+            client-authentication-method: post
+
+          google:
+            client-id: 884479684573-bnjij9l1j7dfekbg06bv8b44s251i7l7.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+            
+logging:
+  level:
+    org.hibernate.type: trace
+
+file:
+  upload:
+    path: /market
+    
+token:
+  secret: token-secret-market
+  access-token-expiration-time: 900000  # 15╨п
+  refresh-token-expiration-time: 1210500000 # 2аж
