@@ -71,5 +71,5 @@ file:
     
 token:
   secret: token-secret-market
-  access-token-expiration-time: 900000  # 15╨п
-  refresh-token-expiration-time: 1210500000 # 2аж
+  access-token-expiration-time: 900000  # 15min
+  refresh-token-expiration-time: 1210500000 # 2weeks
