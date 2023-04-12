@@ -38,7 +38,7 @@ spring:
         registration:
           kakao:
             client-id: 4023ef3d8919ccb7bc7eacec80d9bc12
-            client-secret: IUgyXxsPKjaPLlPgIg9pOR5pBla7Y6EL
+            client-secret: 카카오 키 값
             scope:
               - profile_nickname
               - account_email
@@ -49,7 +49,7 @@ spring:
 
           google:
             client-id: 884479684573-bnjij9l1j7dfekbg06bv8b44s251i7l7.apps.googleusercontent.com
-            client-secret: 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
+            client-secret: 구글 키값
             scope:
               - email
               - profile
